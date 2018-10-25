@@ -22,5 +22,28 @@ class JavaShell {
 		System.out.println("HelloWorld");
 	}
 
-	//function definitions below	
-}
+       public List<Integer> preorder(Node root) {
+        //local declarations
+        List<Integer> result = new ArrayList<Integer>();
+        Stack<Node> myS = new Stack<Node>();
+        myS.push(root);
+        int i = 0;
+        
+        //null
+        if(root == null) {
+            return result;
+        }
+        
+        //dequeue items in queue
+        while(!myS.isEmpty()) {
+            root = myS.pop();
+            result.add(root.val);
+            i = root.children.size()-1;
+            //get childrens
+            while(i > -1) {
+                myS.push(root.children.get(i));
+                i--;
+            }
+        }
+        return result;
+    }
