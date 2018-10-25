@@ -1,6 +1,6 @@
 /*
 Kevin Nguyen
-Basic Shell for Java programs.
+Basic Java program that performs pre-order traversal iteratively.
 
 How to run (linux):
 	1.) open command line and cd into directory folder of where this code is
@@ -22,7 +22,8 @@ class JavaShell {
 		System.out.println("HelloWorld");
 	}
 
-       public List<Integer> preorder(Node root) {
+	//call function to perform preorder traversal (iteration)
+    public List<Integer> preorder(Node root) {
         //local declarations
         List<Integer> result = new ArrayList<Integer>();
         Stack<Node> myS = new Stack<Node>();
@@ -47,3 +48,4 @@ class JavaShell {
         }
         return result;
     }
+}
